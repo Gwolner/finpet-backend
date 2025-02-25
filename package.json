@@ -1,0 +1,26 @@
+{
+  "name": "finpet",
+  "version": "1.0.0",
+  "description": "Backend do projeto Finpet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gwolner/finpet-backend.git"
+  },
+  "keywords": [
+    "petproject",
+    "backend",
+    "financas",
+    "pessoais",
+    "gerenciamento."
+  ],
+  "author": "Guilherme Wolner Dias Monte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gwolner/finpet-backend/issues"
+  },
+  "homepage": "https://github.com/Gwolner/finpet-backend#readme"
+}
