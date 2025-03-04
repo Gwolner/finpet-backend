@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/Gwolner/finpet-backend/issues"
   },
-  "homepage": "https://github.com/Gwolner/finpet-backend#readme"
+  "homepage": "https://github.com/Gwolner/finpet-backend#readme",
+  "dependencies": {
+    "axios": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.40.0",
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "pg": "^8.13.3"
+  }
 }
