@@ -1,5 +1,5 @@
 const {} = require('drizzle-orm');
-const { pgTable, serial, integer, varchar, boolean, timestamp,text } = require('drizzle-orm/pg-core');
+const { pgTable, serial, integer, varchar, boolean, timestamp, text } = require('drizzle-orm/pg-core');
 const {} = require('drizzle-orm/mysql-core');
 
 // Schema da Instituição
