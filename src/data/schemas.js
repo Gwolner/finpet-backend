@@ -1,0 +1,13 @@
+const {} = require('drizzle-orm');
+const { pgTable, serial, integer, varchar, boolean, timestamp,text } = require('drizzle-orm/pg-core');
+const {} = require('drizzle-orm/mysql-core');
+
+// Schema da Instituição
+// `nome`, `cnpj`, `tipo`, `descricao`, `img_logo`
+const InstituicaoSchema = pgTable("instituicao",{
+    id: integer("id").primaryKey(),
+    cnpj: varchar("cnpj", { length: 45}).notNull(),
+    tipo: varchar("tipo", { length: 45}).notNull(),
+    descricao: varchar("descricao", {length: 45}).notNull(),
+    imgLogo: varchar("img_logo", { length: 45 }).notNull()
+});
