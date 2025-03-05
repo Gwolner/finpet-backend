@@ -6,8 +6,21 @@ const {} = require('drizzle-orm/mysql-core');
 // `nome`, `cnpj`, `tipo`, `descricao`, `img_logo`
 const InstituicaoSchema = pgTable("instituicao",{
     id: integer("id").primaryKey(),
-    cnpj: varchar("cnpj", { length: 45}).notNull(),
-    tipo: varchar("tipo", { length: 45}).notNull(),
-    descricao: varchar("descricao", {length: 45}).notNull(),
-    imgLogo: varchar("img_logo", { length: 45 }).notNull()
+    cnpj: varchar("cnpj", { length: 45 }).notNull(),
+    tipo: varchar("tipo", { length: 45 }).notNull(),
+    descricao: varchar("descricao", {length: 45 }).notNull(),
+    imgLogo: varchar("img_logo", { length: 45 }).notNull(),
 });
+
+
+// Schema do Grupo
+// `id`, `nome`, `descricao`
+const GrupoSchema = pgTable("grupo",{
+    id: integer("id").primaryKey(),
+    nome: varchar("nome", { length: 45 }).notNull(),
+    descricao: varchar("descricao", { length: 100 }).notNull(),
+})
+
+
+// Schema da Conta
+// `id`, `agencia`, `numero`, `tipo`, `saldo`, `fgc_conta`, `conta_ativa`, `instituicao_ìd`, `grupo_id`
