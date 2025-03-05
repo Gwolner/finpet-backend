@@ -24,3 +24,14 @@ const GrupoSchema = pgTable("grupo",{
 
 // Schema da Conta
 // `id`, `agencia`, `numero`, `tipo`, `saldo`, `fgc_conta`, `conta_ativa`, `instituicao_ìd`, `grupo_id`
+const ContaSchema = pgTable("conta", {
+    id: integer("id").primaryKey(),
+    agencia: varchar("agencia", { length: 45 }).notNull(),
+    numero: varchar("numero", { length: 45 }).notNull(),
+    tipo: varchar("tipo", { length: 45 }).notNull(),
+    saldo: varchar("saldo", { length: 45 }).notNull(),
+    fgcConta: varchar("fgc_conta", { length: 45 }).notNull(),
+    contaAtiva: varchar("conta_ativa", { length: 45 }).notNull(),
+    instituicaoId: varchar("instituicao_ìd", { length: 45 }).notNull(),
+    grupoId: varchar("grupo_id", { length: 45 }).notNull(),
+})
