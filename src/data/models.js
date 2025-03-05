@@ -21,3 +21,8 @@ function InstituicaoModel(options = {}){
  * @param { Object } options 
  * 
  */
+function GrupoSchema(options = {}){
+    this.id = options.id;
+    this.nome = options.nome;
+    this.descricao = options.descricao;
+}
