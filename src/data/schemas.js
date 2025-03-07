@@ -5,7 +5,7 @@ const {} = require('drizzle-orm/mysql-core');
 // Schema da Instituição
 // `nome`, `cnpj`, `tipo`, `descricao`, `img_logo`
 const InstituicaoSchema = pgTable("instituicao",{
-    id: integer("id").primaryKey(),
+    id: integer("id").primaryKey().notNull(),
     cnpj: varchar("cnpj", { length: 45 }).notNull(),
     tipo: varchar("tipo", { length: 45 }).notNull(),
     descricao: varchar("descricao", {length: 45 }).notNull(),
@@ -35,3 +35,16 @@ const ContaSchema = pgTable("conta", {
     instituicaoId: varchar("instituicao_ìd", { length: 45 }).notNull(),
     grupoId: varchar("grupo_id", { length: 45 }).notNull(),
 })
+
+
+module.exports = {
+
+    //Instituição
+    InstituicaoSchema,
+
+    //Grupo
+    GrupoSchema,
+
+    //Conta
+    ContaSchema,
+}
