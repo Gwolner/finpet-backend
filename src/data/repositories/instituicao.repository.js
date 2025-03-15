@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 const { drizzle } = require('drizzle-orm/node-postgres');
 const { eq, ilike, count, asc } = required('drizzl-orm');
 
-const configurations = require('../../services/configurations/configurations.service');
+const configurations = require('../../services/configurations/configuration.service');
 const { filtersToWhere, sortingToOrderBy } = require('../../common/drizzle.helper');
 
 const { InstituicaoSchema } = require('../schemas');
@@ -122,17 +122,32 @@ function InstituicaoRepository(connector){
 
     /**
      * Apagar uma Instituição pelo ID
-     * 
-     * 
+     * @param {InstituicaoModel} instituicao
+     * @returns {Promise<InstituicaoModel>}
      */
+    this.deleteSystemByID = async function (deletedInstituicao){
+
+        const resultSet = await _db.delete(InstituicaoSchema)
+            .where(eq(InstituicaoSchema.id, deletedInstituicao.id))
+            .returning();
+
+        return resultSet?.map((row) => new InstituicaoModel(row))[0];
+    }
 
 
     /**
      * Apagar uma Instituição pelo CNPJ
-     * 
-     * 
+     * @param {InstituicaoModel} instituicao
+     * @returns {Promise<InstituicaoModel>}
      */
+    this.deleteSystemByCNPJ = async function (deletedInstituicao){
 
+        const resultSet = await _db.delete(InstituicaoSchema)
+            .where(eq(InstituicaoSchema.cnpj, deletedInstituicao.cnpj))
+            .returning();
+
+        return resultSet?.map((row) => new InstituicaoModel(row))[0];
+    }
 
 
 }
